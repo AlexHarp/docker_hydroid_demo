@@ -1,2 +1,2 @@
 FROM solr:5.4.1
-RUN ["apt-get","update"]
+ADD /usr/share/hydroid/solr /opt/solr/server/solr/
