@@ -1,2 +1,3 @@
 FROM solr:5.4.1
-ADD /usr/share/hydroid/solr /opt/solr/server/solr/
+RUN ["bin/solr", "create_core", "-c", "gettingstarted"]
+RUN ["bin/post", "-c", "gettingstarted", "example/exampledocs/manufacturers.xml"]
