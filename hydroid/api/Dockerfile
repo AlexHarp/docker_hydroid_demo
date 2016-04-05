@@ -6,4 +6,7 @@ ADD "src" "/tmp/hydroid-api"
 WORKDIR "/tmp/hydroid-api"
 RUN ["mvn","clean","package"]
 RUN ["cp","/tmp/hydroid-api/target/hydroid.war","/usr/share/tomcat8-root/hydroid.war"]
-CMD ["service","tomcat8","start"]
+
+EXPOSE 8080 80 443 8009
+
+CMD ["/opt/tomcat/bin/catalina.sh", "run", "2>&1"]
