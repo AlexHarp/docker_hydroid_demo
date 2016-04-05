@@ -1,4 +1,10 @@
 webapi:
-  build: ./hydroid/api/
+  build: hydroid/api
   ports:
-   - "8080:8080"
+   - "9090:9090"
+db:
+  container_name: hydroid_db
+  build: hydroid/postgres
+  environment:
+    POSTGRES_USER: postgres
+    POSTGRES_PASSWORD: postgres
