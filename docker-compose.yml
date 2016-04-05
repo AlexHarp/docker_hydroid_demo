@@ -2,8 +2,9 @@ webapi:
   build: hydroid/api
   ports:
    - "9090:9090"
+   links:
+    - db
 db:
-  container_name: hydroid_db
   build: hydroid/postgres
   environment:
     POSTGRES_USER: postgres
