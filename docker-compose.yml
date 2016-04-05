@@ -2,7 +2,7 @@ webapi:
   build: hydroid/api
   ports:
    - "9090:9090"
-   links:
+  links:
     - db
 db:
   build: hydroid/postgres
