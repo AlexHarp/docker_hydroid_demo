@@ -1,5 +1,5 @@
-services:
-  webapi:
-    build: ./hydroid/api/
-    ports:
-     - "8080:8080"
+webapi:
+  build: ./hydroid/api/
+  ports:
+   - "8080:8080"
+	 
