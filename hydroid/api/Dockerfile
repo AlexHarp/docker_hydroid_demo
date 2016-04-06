@@ -1,6 +1,8 @@
-FROM java:openjdk-8-jdk
-FROM tomcat:8-jre8
+FROM java:openjdk-8
 
+EXPOSE 9090
+
+# Maven
 ENV MAVEN_VERSION 3.3.3
 
 RUN mkdir -p /usr/share/maven \
@@ -12,13 +14,15 @@ ENV MAVEN_HOME /usr/share/maven
 
 VOLUME /root/.m2
 
-RUN ["mkdir","-p","/tmp/hydroid-api;"]
+# Hydroid app
+RUN ["mkdir","-p","/tmp/hydroid-api"]
+RUN ["mkdir","-p","/usr/local/hydroid"]
 ADD "src" "/tmp/hydroid-api"
-ADD "config/application.properties" "/tmp/hydroid-api/src/main/resources/application.properties"
 WORKDIR "/tmp/hydroid-api"
 RUN ["mvn","clean","package"]
-RUN ["cp","/tmp/hydroid-api/target/hydroid.war","/usr/local/tomcat/webapps/"]
+RUN ["cp","/tmp/hydroid-api/target/hydroid.jar","/usr/local/hydroid/hydroid.jar"]
+ADD "config/application.properties" "/usr/local/hydroid/application.properties"
 
-EXPOSE 8080
+ENV spring.config.location file:/usr/local/hydroid/application.properties
 
-CMD ["catalina.sh", "run"]
+CMD ["java", "-jar", "/usr/local/hydroid/hydroid.jar"]
