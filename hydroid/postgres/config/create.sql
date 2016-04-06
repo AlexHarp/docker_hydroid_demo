@@ -1,7 +1,3 @@
-CREATE ROLE hydroid LOGIN;
-CREATE SCHEMA IF NOT EXISTS hydroid AUTHORIZATION hydroid;
-
-
 CREATE TABLE hydroid.documents (
     id bigserial PRIMARY KEY,
     origin varchar(500) NOT NULL,
