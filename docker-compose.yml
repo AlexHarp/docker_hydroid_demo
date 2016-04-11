@@ -4,8 +4,13 @@ webapi:
    - "9090:9090"
   links:
     - db
+	- solr
 db:
   build: hydroid/postgres
   environment:
     POSTGRES_USER: hydroid
     POSTGRES_PASSWORD: postgres
+solr:
+  build: hydroid/solr
+  ports:
+   - "8983:8983"
