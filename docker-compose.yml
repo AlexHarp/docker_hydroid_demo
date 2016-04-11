@@ -4,7 +4,7 @@ webapi:
    - "9090:9090"
   links:
     - db
-	- solr
+    - solr
 db:
   build: hydroid/postgres
   environment:
