@@ -7,5 +7,5 @@ webapi:
 db:
   build: hydroid/postgres
   environment:
-    POSTGRES_USER: postgres
+    POSTGRES_USER: hydroid
     POSTGRES_PASSWORD: postgres
