@@ -12,10 +12,9 @@ RUN     npm install -g grunt-cli
 # Hydroid Client
 RUN ["mkdir", "-p", "/tmp/hydroid-client"]
 ADD "src" "/tmp/hydroid-client"
-WORKDIR "/tmp/hydroid-client/node_modules/bin"
+WORKDIR "/tmp/hydroid-client/src"
 RUN ["grunt", "build"]
-WORKDIR "/tmp/hydroid-client/build"
-zip -r ../../release/hydroid.zip *
+WORKDIR "/tmp/hydroid-client/src/build"
 RUN ["cp", "-r", "webapps/*", "/usr/local/apache2/htdocs/"]
 
 # Configuration
