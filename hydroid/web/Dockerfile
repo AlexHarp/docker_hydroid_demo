@@ -15,6 +15,10 @@ RUN     ln -s /usr/bin/nodejs /usr/bin/node
 RUN ["mkdir", "-p", "/tmp/hydroid-client"]
 ADD "src" "/tmp/hydroid-client"
 WORKDIR "/tmp/hydroid-client/src"
+
+RUN pwd
+RUN ls -l
+
 RUN ["grunt", "build"]
 WORKDIR "/tmp/hydroid-client/src/build"
 RUN ["cp", "-r", "webapps/*", "/usr/local/apache2/htdocs/"]
