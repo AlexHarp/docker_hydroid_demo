@@ -10,10 +10,12 @@ This project is experimenting with Docker and the use of it to present an easy t
 ## How to run it
 Once you have a machine running docker, these images can be built locally to run with the following commands.
 
-- `git clone https://github.com/GeoscienceAustralia/docker_hydroid_demo.git`
-- `chmod +x ./build.sh
-- `./build.sh`
-- `docker-compose up -d`
+``` bash
+git clone https://github.com/GeoscienceAustralia/docker_hydroid_demo.git
+chmod +x ./build.sh
+./build.sh
+docker-compose up -d
+```
 
 This will run a a series of containers that is used by the Hydroid system including the following.
 
