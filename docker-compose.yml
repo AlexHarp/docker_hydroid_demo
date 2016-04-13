@@ -1,3 +1,7 @@
+web:
+  build: hydroid/web
+  ports:
+   - "80:80"
 webapi:
   build: hydroid/api
   ports:
