@@ -12,7 +12,12 @@ RUN     npm install -g grunt-cli
 RUN     ln -s /usr/bin/nodejs /usr/bin/node
 
 # Hydroid Client
+
+RUN pwd
+
 RUN ["mkdir", "-p", "/tmp/hydroid-client"]
+WORKDIR "hydroid"
+RUN pwd
 ADD "src" "/tmp/hydroid-client"
 WORKDIR "/tmp/hydroid-client/src"
 
