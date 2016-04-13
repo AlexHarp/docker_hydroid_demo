@@ -23,6 +23,6 @@ RUN ["mvn","clean","package"]
 RUN ["cp","/tmp/hydroid-api/target/hydroid.jar","/usr/local/hydroid/hydroid.jar"]
 ADD "config/application.properties" "/usr/local/hydroid/application.properties"
 ADD "demo/" "/usr/local/hydroid/files/"
-
+WORKDIR "/usr/local/hydroid"
 ENV spring.config.location file:/usr/local/hydroid/application.properties
 CMD ["java", "-jar", "/usr/local/hydroid/hydroid.jar","--spring.config.location=file:/usr/local/hydroid/application.properties"]
