@@ -2,6 +2,8 @@ FROM httpd:2.4
 
 RUN apt-get update
 
+RUN pwd
+
 #VOLUME /root/.m2
 
 # Install node, npm, brower and grunt
@@ -35,6 +37,6 @@ COPY config/httpd.conf /usr/local/apache2/conf/httpd.conf
 EXPOSE 80
 
 # Expose Apache Document root
-VOLUME ["/url/local/apache2/htdocs"]
+#VOLUME ["/url/local/apache2/htdocs"]
 
 #CMD ["apachectl", "start"]
