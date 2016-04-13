@@ -5,9 +5,11 @@ RUN apt-get update
 #VOLUME /root/.m2
 
 # Install node, npm, brower and grunt
-RUN     apt-get install -y nodejs npm
+RUN     apt-get install -y nodejs
+RUN     apt-get install -y npm
 RUN     npm install -g bower
 RUN     npm install -g grunt-cli
+RUN     ln -s /usr/bin/nodejs /usr/bin/node
 
 # Hydroid Client
 RUN ["mkdir", "-p", "/tmp/hydroid-client"]
