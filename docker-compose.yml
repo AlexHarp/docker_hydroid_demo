@@ -1,11 +1,14 @@
 web:
   build: hydroid/web
   ports:
-   - "80:80"
+    - "80:80"
+  links:
+    - webapi
+    - solr
 webapi:
   build: hydroid/api
   ports:
-   - "9090:9090"
+    - "9090:9090"
   links:
     - db
     - solr
@@ -19,12 +22,12 @@ db:
 solr:
   build: hydroid/solr
   ports:
-   - "8983:8983"
+    - "8983:8983"
 jena:
   build: hydroid/jena
   ports:
-   - "3030:3030"
+    - "3030:3030"
 stanbol:
   build: hydroid/stanbol
   ports:
-   - "8080:8080"
+    - "8080:8080"
