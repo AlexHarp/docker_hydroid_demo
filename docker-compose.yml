@@ -5,6 +5,8 @@ web:
   links:
     - webapi
     - solr
+    - jena
+    - stanbol
 webapi:
   build: hydroid/api
   ports:
