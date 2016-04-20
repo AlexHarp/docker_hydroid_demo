@@ -6,5 +6,4 @@ services:
   - docker
   
 script:
-  - docker build -f ./hydroid/solr/Dockerfile -t hydroid_solr .
-  - docker images
+  - docker-compose build
