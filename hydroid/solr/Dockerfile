@@ -7,7 +7,7 @@ RUN apt-get update && \
 ENV SOLR_USER root
 ENV SOLR_UID 8983
 
-ADD "config/" "/opt/solr/server/solr/"
+ADD "config" "/opt/solr/server/solr/"
 
 ENV SOLR_KEY E6E21FFCDCEA14C95910EA65051A0FAF76BC6507
 RUN gpg --keyserver ha.pool.sks-keyservers.net --recv-keys "$SOLR_KEY"
