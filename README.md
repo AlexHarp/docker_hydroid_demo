@@ -13,8 +13,9 @@ Once you have a machine running docker, these images can be built locally to run
 ``` bash
 git clone https://github.com/GeoscienceAustralia/docker_hydroid_demo.git
 chmod +x ./build.sh
+chmod +x ./launch.sh
 ./build.sh
-docker-compose up -d
+./launch.sh
 ```
 
 This will run a a series of containers that is used by the Hydroid system including the following.
