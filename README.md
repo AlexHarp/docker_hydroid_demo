@@ -12,6 +12,7 @@ Once you have a machine running docker, these images can be built locally to run
 
 ``` bash
 git clone https://github.com/GeoscienceAustralia/docker_hydroid_demo.git
+cd docker_hydroid_demo
 chmod +x ./build.sh
 chmod +x ./launch.sh
 ./build.sh
