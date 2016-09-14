@@ -7,8 +7,11 @@ This project is experimenting with Docker and the use of it to present an easy t
 - Docker 1.8+
 - Docker Compose
 
+## Running on an Amazon EC2 instance
+To make it easy to try out this docker demo of Hydroid, this repository has a `ec2userdata.sh` file that can be copied into an EC2 instance running on Amazon-Linux to prepare a working environment. The script simply installs the above requirements ready to run the demo itself.
+
 ## How to run it
-Once you have a machine running docker, these images can be built locally to run with the following commands.
+Once you have a machine is ready, these images can be built locally to run with the following commands.
 
 ``` bash
 git clone https://github.com/GeoscienceAustralia/docker_hydroid_demo.git
