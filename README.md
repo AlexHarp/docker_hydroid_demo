@@ -24,11 +24,11 @@ chmod +x ./launch.sh
 
 This will run a a series of containers that is used by the Hydroid system including the following.
 
-- Apache Web container (static web applcation)
-- Spring Boot API (Hydroid API)
-- Solr (Search)
-- Fuseki Jena (Triples data store to enable SPARQL support of indexed data)
-- Stanbol in Tomcat (To enhance data of specific vocabulary)
+- Apache Web container (static web applcation) - port `80`
+- Spring Boot API (Hydroid API) - port `9090`
+- Solr (Search) - port `8983`
+- Fuseki Jena (Triples data store to enable SPARQL support of indexed data) - port `3030`
+- Stanbol in Tomcat (To enhance data of specific vocabulary) - port `8080`
 - Postgres (Database)
 
 Once the `docker-compose up` has finished starting the containers, the web application is accessible on local port 80.
